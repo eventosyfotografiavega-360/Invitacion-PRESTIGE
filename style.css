@@ -1,60 +1,62 @@
 :root {
-    --rosa-viejo: #b0707e;
-    --crema-fondo: #f4ece6;
-    --texto: #4a4a4a;
+    --rosa: #b0707e;
+    --crema: #f4ece6;
+    --dorado: #c5a880;
+    --oscuro: #4a4a4a;
 }
 
 body {
     margin: 0; font-family: 'Montserrat', sans-serif;
-    background-color: var(--crema-fondo); color: var(--texto);
-    overflow-x: hidden; text-align: center;
+    background-color: var(--crema); color: var(--oscuro);
+    text-align: center; overflow-x: hidden;
 }
 
-/* El Sobre */
+/* Sobre */
 #envelope-wrapper {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: var(--rosa-viejo); z-index: 9999;
+    background-color: var(--rosa); z-index: 9999;
     display: flex; justify-content: center; align-items: center;
-    transition: transform 1s ease-in-out, opacity 1s;
+    transition: transform 1s ease-in-out;
 }
 
 .wax-seal {
-    width: 120px; height: 120px;
-    background: #d4af37; border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    cursor: pointer;
+    width: 130px; height: 130px; background: #d4af37;
+    border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); cursor: pointer;
 }
 
-.initials { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #fff; }
+.seal-letter { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: white; }
 
-/* Contenido Principal */
+/* Hero */
 #main-content { opacity: 0; transition: opacity 1s; }
-
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') no-repeat center center/cover;
+    height: 100vh; background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover;
     display: flex; align-items: center; justify-content: center; color: white;
 }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; margin: 0; }
 
-.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; }
+/* Secciones */
+section { padding: 80px 20px; }
+.italic-gold { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--rosa); font-size: 2rem; }
 
-.script-font { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--rosa-viejo); }
-
-/* Menú */
-.menu-trigger {
-    position: fixed; top: 20px; right: 20px; z-index: 5000;
-    font-size: 1.5rem; background: white; width: 45px; height: 45px;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+/* Pases Card */
+.pases-card {
+    background: white; padding: 40px; border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 400px; margin: 0 auto;
 }
+.pases-number { border: 1px solid #ddd; padding: 20px; margin: 20px 0; }
+.pases-number span { font-size: 3rem; color: var(--rosa); }
 
-#side-menu {
-    position: fixed; top: 0; right: -100%; width: 100%; height: 100%;
-    background: white; z-index: 6000; transition: 0.5s;
-    display: flex; flex-direction: column; justify-content: center; gap: 20px;
-}
+/* Itinerario */
+.timeline { display: flex; flex-direction: column; gap: 30px; align-items: center; }
+.t-item span { font-size: 2.5rem; display: block; margin-bottom: 5px; }
 
+/* Menú Sidebar */
+.menu-trigger { position: fixed; top: 20px; right: 20px; z-index: 5000; background: white; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
+#side-menu { position: fixed; top: 0; right: -100%; width: 300px; height: 100%; background: white; z-index: 6000; transition: 0.4s; padding: 80px 20px; display: flex; flex-direction: column; gap: 20px; }
 #side-menu.menu-visible { right: 0; }
+#side-menu a { text-decoration: none; color: var(--oscuro); font-size: 1.2rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
 
-#side-menu a { text-decoration: none; font-size: 1.5rem; color: var(--texto); letter-spacing: 2px; }
+/* Modal RSVP */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 7000; align-items: center; justify-content: center; }
+.modal-content { background: white; padding: 40px; border-radius: 10px; width: 90%; max-width: 400px; }
