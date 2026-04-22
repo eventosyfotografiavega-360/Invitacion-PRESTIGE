@@ -1,38 +1,68 @@
+// ==========================================
+// 1. ABRIR SOBRE (Paso al Inicio)
+// ==========================================
 function openEnvelope() {
     const wrapper = document.getElementById('envelope-wrapper');
     const content = document.getElementById('main-content');
     const audio = document.getElementById('miMusica');
 
-    wrapper.style.transform = 'translateY(-100%)';
+    // Animación Premium: Deslizar hacia arriba cubic-bezier
+    wrapper.style.transform = 'translateY(-110%)';
+    
     setTimeout(() => {
         wrapper.style.display = 'none';
         content.style.opacity = '1';
+        // Iniciar la música automáticamente al abrir (si existe el archivo)
         if (audio) audio.play();
-    }, 1000);
+    }, 1200);
 }
 
-function toggleMenu() {
-    document.getElementById('side-menu').classList.toggle('menu-visible');
-}
 
-function openRSVP() { document.getElementById('rsvp-modal').style.display = 'flex'; }
-function closeRSVP() { document.getElementById('rsvp-modal').style.display = 'none'; }
+// ==========================================
+// 2. INICIALIZAR CARRUSEL DE PADRINOS (Swiper.js)
+// ==========================================
+const swiperPadrinos = new Swiper('.swiper-padrinos', {
+    loop: true,
+    pagination: { 
+        el: '.swiper-pagination', 
+        clickable: true 
+    },
+    autoplay: { 
+        delay: 5000 
+    },
+    effect: 'slide',
+});
 
-function sendToWhatsApp() {
-    const pases = document.getElementById('guest-count').value;
-    const mensaje = encodeURIComponent(`¡Hola Elizabeth! Confirmo mi asistencia para ${pases} pases.`);
-    window.open(`https://wa.me/528771378433?text=${mensaje}`);
-}
 
-// Contador corregido (Fecha futura)
-const targetDate = new Date("March 18, 2027 17:00:00").getTime();
-setInterval(() => {
+// ==========================================
+// 3. CONTADOR REGRESIVO (Boda Alicia y Mario)
+// ==========================================
+// Fecha objetivo: Sábado 22 de Agosto 2026, 6:00 PM (18:00)
+const weddingDate = new Date("August 22, 2026 18:00:00").getTime();
+
+const updateCountdown = () => {
     const now = new Date().getTime();
-    const diff = targetDate - now;
-    if (diff > 0) {
-        document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-        document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+    const diff = weddingDate - now;
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minsEl = document.getElementById("mins");
+    const secsEl = document.getElementById("secs");
+
+    if (daysEl && hoursEl && minsEl && secsEl) {
+        if (diff < 0) {
+            document.getElementById("countdown-section").innerHTML = "<div class='elegant-card'><h2 class='script-oro'>¡LLEGÓ EL DÍA!</h2></div>";
+            return;
+        }
+
+        // Cálculos matemáticos del tiempo restante
+        daysEl.innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+        hoursEl.innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        minsEl.innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        secsEl.innerText = Math.floor((diff % (1000 * 60)) / 1000);
     }
-}, 1000);
+};
+
+// Actualizar cada segundo
+setInterval(updateCountdown, 1000);
+updateCountdown(); // Ejecutar una vez al inicio
