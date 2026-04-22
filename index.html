@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis XV | Elizabeth</title>
+    <title>Invitación Digital | Elizabeth</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css?v=3.0">
+    
+    <link rel="stylesheet" href="style.css?v=4.0">
 </head>
 <body>
 
@@ -20,17 +23,20 @@
     </div>
 
     <div class="menu-trigger" onclick="toggleMenu()">☰</div>
+
     <div id="side-menu">
         <button class="close-btn" onclick="toggleMenu()">✕</button>
         <nav>
             <a href="#inicio" onclick="toggleMenu()">INICIO</a>
+            <a href="#pases" onclick="toggleMenu()">PASES</a>
             <a href="#itinerario" onclick="toggleMenu()">ITINERARIO</a>
-            <a href="#pases" onclick="toggleMenu()">CONFIRMAR ASISTENCIA</a>
             <a href="#ubicacion" onclick="toggleMenu()">UBICACIÓN</a>
         </nav>
     </div>
 
-    <audio id="miMusica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
+    <audio id="miMusica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
 
     <main id="main-content">
         
@@ -41,55 +47,48 @@
             </div>
         </section>
 
-        <section class="intro">
-            <p>Con mucha ilusión y emoción, quiero compartir con ustedes un momento muy especial.</p>
-            <h2 class="italic-gold">¡Los espero para celebrar juntos!</h2>
-        </section>
-
         <section id="pases" class="pases-section">
             <div class="pases-card">
                 <h3>¡ES UN PLACER INVITARLOS!</h3>
-                <p>Aquí va el mensaje a tus invitados</p>
-                <div class="pases-number">
+                <div class="pases-circle">
                     <span id="num-pases">2</span>
                     <p>Pases</p>
                 </div>
-                <button class="btn-confirmar" onclick="openRSVP()">Confirmar asistencia</button>
+                <button class="btn-action" onclick="openRSVP()">Confirmar Asistencia</button>
             </div>
         </section>
 
         <section class="countdown-section">
-            <h2 class="italic-gold">¡No te lo pierdas!</h2>
+            <h2 class="script-title">¡No te lo pierdas!</h2>
             <div id="timer">
-                <div class="t-block"><span id="days">00</span><p>Días</p></div>
-                <div class="t-block"><span id="hours">00</span><p>Hrs</p></div>
-                <div class="t-block"><span id="mins">00</span><p>Min</p></div>
-                <div class="t-block"><span id="secs">00</span><p>Seg</p></div>
+                <div class="time-box"><span id="days">00</span><p>Días</p></div>
+                <div class="time-box"><span id="hours">00</span><p>Hrs</p></div>
+                <div class="time-box"><span id="mins">00</span><p>Min</p></div>
+                <div class="time-box"><span id="secs">00</span><p>Seg</p></div>
             </div>
         </section>
 
         <section id="itinerario" class="itinerario-section">
             <h3 class="section-title">Itinerario</h3>
-            <div class="timeline">
-                <div class="t-item"><span>⛪</span><p>Misa - 5:00 PM</p></div>
-                <div class="t-item"><span>🥂</span><p>Recepción - 7:00 PM</p></div>
-                <div class="t-item"><span>🍽</span><p>Cena - 9:00 PM</p></div>
+            <div class="itinerary-grid">
+                <div class="it-item"><span>⛪</span><p>Misa<br>5:00 PM</p></div>
+                <div class="it-item"><span>🥂</span><p>Recepción<br>7:00 PM</p></div>
+                <div class="it-item"><span>🍽</span><p>Cena<br>9:00 PM</p></div>
             </div>
         </section>
     </main>
 
     <div id="rsvp-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-box">
             <span class="close-modal" onclick="closeRSVP()">×</span>
-            <h3>Confirmar Pases</h3>
-            <p>Pases Adulto</p>
-            <input type="number" id="pases-input" value="2" min="1">
-            <button class="btn-final" onclick="sendWhatsApp()">Confirmar Asistencia</button>
+            <h3>Confirmar Asistencia</h3>
+            <label>Pases Adulto:</label>
+            <input type="number" id="guest-count" value="2" min="1">
+            <button class="btn-send" onclick="sendToWhatsApp()">Confirmar por WhatsApp</button>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.0.9/index.min.js"></script>
-    <script src="script.js?v=3.0"></script>
+    <script src="script.js?v=4.0"></script>
 </body>
 </html>
