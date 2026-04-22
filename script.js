@@ -4,26 +4,29 @@ function openEnvelope() {
     const mainContent = document.getElementById('main-content');
     const audio = document.getElementById('miMusica');
 
-    // 1. Inicia la animación de la solapa
     envelope.classList.add('open');
 
-    // 2. Espera a que la solapa se abra y luego desliza todo el sobre
     setTimeout(() => {
         wrapper.style.transform = 'translateY(-100%)';
         wrapper.style.opacity = '0';
         
-        // 3. Muestra el contenido principal
         mainContent.style.display = 'block';
         setTimeout(() => {
             mainContent.style.opacity = '1';
         }, 100);
 
-        // 4. Inicia la música
         if (audio) audio.play();
-    }, 800); // Tiempo que tarda en abrirse la solapa
+    }, 800);
 }
 
-// (Mantenemos tu código de Swiper y Contador abajo)
+// Carrusel de Padrinos
+const swiper = new Swiper('.swiper-padrinos', {
+    loop: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    autoplay: { delay: 4000 },
+});
+
+// Contador
 const weddingDate = new Date("August 22, 2026 18:00:00").getTime();
 setInterval(() => {
     const now = new Date().getTime();
