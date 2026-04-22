@@ -1,44 +1,81 @@
-<div id="envelope-wrapper" onclick="openEnvelope()">
-    <div class="envelope">
-        <div class="wax-seal">
-            <span class="initials">A & M</span>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Digital | Vega 360</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="style.css?v=2.1">
+</head>
+<body>
+
+    <div id="envelope-wrapper" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="wax-seal">
+                <span class="initials">E</span>
+            </div>
+            <p class="click-text">Click Aquí</p>
         </div>
-        <p class="click-text">Click Aquí</p>
     </div>
-</div>
 
-<div class="menu-trigger" onclick="toggleMenu()">☰</div>
+    <div class="menu-trigger" onclick="toggleMenu()">☰</div>
 
-<div id="side-menu">
-    <button style="position:absolute; top:20px; right:20px; border:none; background:none; font-size:2rem;" onclick="toggleMenu()">✕</button>
-    <a href="#inicio" onclick="toggleMenu()">INICIO</a>
-    <a href="#itinerario" onclick="toggleMenu()">ITINERARIO</a>
-    <a href="#padrinos" onclick="toggleMenu()">PADRINOS</a>
-    <a href="#galeria" onclick="toggleMenu()">GALERÍA</a>
-</div>
+    <div id="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">✕</button>
+        <nav>
+            <a href="#inicio" onclick="toggleMenu()">INICIO</a>
+            <a href="#itinerario" onclick="toggleMenu()">ITINERARIO</a>
+            <a href="#galeria" onclick="toggleMenu()">GALERÍA</a>
+            <a href="#ubicacion" onclick="toggleMenu()">UBICACIÓN</a>
+        </nav>
+    </div>
 
-<main id="main-content">
-    <section id="inicio" class="hero">
-        <h1>ALICIA & MARIO</h1>
-        <p>18 . 12 . 2026</p>
-    </section>
+    <main id="main-content">
+        
+        <section id="inicio" class="hero">
+            <div class="hero-text">
+                <h1>Elizabeth</h1>
+                <p class="hero-date">18 . 03 . 2026</p>
+            </div>
+        </section>
 
-    <section id="padrinos" class="padrinos">
-        <h3>Nuestros Padrinos</h3>
-        <div class="swiper swiper-padrinos">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <p style="font-size: 2rem;">❤</p>
-                    <p><b>Velación</b></p>
-                    <p>Victor Alfonso Contreras Gómez<br>Brenda del Rocío González Lomelí</p>
+        <section class="intro-text">
+            <p>Con mucha ilusión y emoción, quiero compartir con ustedes un momento muy especial de mi vida.</p>
+            <h2 class="script-font">¡Los espero para celebrar mis 15 años juntos!</h2>
+        </section>
+
+        <section id="itinerario" class="itinerario">
+            <h3 class="section-title">Itinerario</h3>
+            <div class="timeline">
+                <div class="event">
+                    <span class="icon">⛪</span>
+                    <h4>Ceremonia</h4>
+                    <p>5:00 PM</p>
                 </div>
-                <div class="swiper-slide">
-                    <p style="font-size: 2rem;">💍</p>
-                    <p><b>Anillos</b></p>
-                    <p>Juan Pérez & María López</p>
+                <div class="event">
+                    <span class="icon">🥂</span>
+                    <h4>Recepción</h4>
+                    <p>6:00 PM</p>
+                </div>
+                <div class="event">
+                    <span class="icon">🍽</span>
+                    <h4>Cena</h4>
+                    <p>8:30 PM</p>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-</main>
+        </section>
+
+    </main>
+
+    <audio id="miMusica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js?v=2.1"></script>
+</body>
+</html>
