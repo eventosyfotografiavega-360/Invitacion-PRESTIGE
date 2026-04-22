@@ -2,9 +2,10 @@
     --oro: #c5a880;
     --crema: #fdfaf6;
     --sobre-bg: #f0e6d6;
+    --texto: #4d4d4d;
 }
 
-body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--crema); text-align: center; }
+body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--crema); text-align: center; color: var(--texto); overflow-x: hidden; }
 
 /* Sobre */
 #envelope-wrapper {
@@ -13,7 +14,6 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(-
     display: flex; justify-content: center; align-items: center;
     perspective: 1000px; transition: transform 1s ease-in, opacity 1s;
 }
-
 .envelope { position: relative; width: 300px; height: 200px; background-color: var(--sobre-bg); cursor: pointer; }
 .flap {
     position: absolute; top: 0; left: 0; width: 0; height: 0;
@@ -40,12 +40,16 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(-
     url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover;
     display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;
 }
-.caligrafia-blanca { font-family: 'Pinyon Script', cursive; font-size: 5rem; margin: 0; }
+.caligrafia-blanca { font-family: 'Pinyon Script', cursive; font-size: 5rem; margin: 0; font-weight: 100; }
+.fecha-hero { font-size: 0.9rem; letter-spacing: 3px; color: rgba(255,255,255,0.8); }
 
 /* Secciones */
-section { padding: 80px 20px; }
-.elegant-card { background: white; padding: 50px 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); max-width: 500px; margin: 0 auto; }
+section { padding: 100px 20px; }
+.elegant-bg { background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); }
+.elegant-card { background: white; padding: 60px 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); max-width: 500px; margin: 0 auto; }
 .script-oro { font-family: 'Pinyon Script', cursive; font-size: 4rem; color: var(--oro); margin: 0; }
+.fecha-grande { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin: 20px 0; color: var(--texto); }
+
 #timer { display: flex; justify-content: center; gap: 15px; margin: 40px 0; }
 .t-block { background: var(--crema); padding: 15px; min-width: 70px; }
 .t-block span { font-size: 1.8rem; display: block; color: var(--oro); }
@@ -53,10 +57,99 @@ section { padding: 80px 20px; }
 
 /* Padres */
 .parents-grid { display: flex; flex-direction: column; gap: 40px; margin-top: 40px; }
-.parent-box h4 { font-family: 'Cormorant Garamond', serif; text-transform: uppercase; letter-spacing: 2px; color: var(--oro); }
+.parent-box h4 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: var(--oro); font-weight: 300; font-size: 0.8rem; }
+.serif-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; font-weight: 300; }
 
-/* Padrinos */
+/* Padrinos Swiper */
+.swiper-padrinos { padding-bottom: 50px; }
 .padrino-card { background: white; padding: 60px 20px; border-radius: 8px; margin: 0 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
 .p-icon { font-size: 3rem; color: var(--oro); display: block; margin-bottom: 15px; }
+.swiper-pagination-bullet-active { background: var(--oro) !important; }
+
+/* -----------------------------------------------------------
+   SECCIÓN ITINERARIO (NUEVO ESTILO IDÉNTICO A FOTOS)
+   ----------------------------------------------------------- */
+.itinerario-section {
+    padding-bottom: 150px; /* Espacio extra al final */
+}
+
+/* Contenedor Swiper para Itinerario */
+.swiper-itinerario {
+    width: 100%;
+    max-width: 500px; /* Mismo ancho que el contador */
+    margin: 0 auto;
+    padding: 20px 0; /* Espacio para que no se corten las sombras */
+}
+
+/* La cajita blanca del itinerario */
+.itinerary-card {
+    background: white;
+    padding: 70px 20px; /* Padding extra para que las flechas tengan espacio vertical */
+    border-radius: 4px; /* Subtle radius */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Necesario para posicionar las flechas dentro */
+    margin: 0 10px; /* Espacio entre cajitas al deslizar */
+}
+
+/* Contenido de texto centrado */
+.itin-content {
+    text-align: center;
+}
+
+/* Nombre del evento (IGLESIA, FIESTA, etc.) - Montserrat bold */
+.itin-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Regular pero uppercase */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--texto);
+    margin: 0 0 10px 0;
+}
+
+/* La hora - Cormorant Garamond serif */
+.itin-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; /* Grande como en las fotos */
+    font-weight: 300;
+    color: var(--oro);
+    margin: 0 0 5px 0;
+}
+
+/* Ubicación/Detalle */
+.itin-loc {
+    font-size: 0.8rem;
+    color: #aaaaaa; /* Gris claro */
+    margin: 0;
+}
+
+/* Personalización de las FLECHAS de Swiper para que coincidan con fotos */
+.itin-arrow {
+    color: #dddddd; /* Gris súper clarito como en tus ejemplos */
+    font-size: 1rem; /* Pequeñas y finas */
+    top: 50%; /* Centradas verticalmente */
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    margin-top: 0; /* Override Swiper default */
+}
+
+/* Flecha Izquierda - la metemos dentro de la caja */
+.swiper-button-prev.itin-arrow {
+    left: 10px;
+}
+
+/* Flecha Derecha - la metemos dentro de la caja */
+.swiper-button-next.itin-arrow {
+    right: 10px;
+}
+
+/* Reducimos el tamaño del icono 'chevron' que Swiper usa por defecto */
+.itin-arrow::after {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
