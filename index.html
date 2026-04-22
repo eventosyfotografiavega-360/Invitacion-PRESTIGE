@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda Alicia y Mario | Vega 360</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css?v=2.0">
+</head>
+<body>
+
+    <div id="envelope-wrapper" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="wax-seal">
+                <img src="https://cdn-icons-png.flaticon.com/512/5836/5836561.png" alt="Sello">
+                <span class="initials">A & M</span>
+            </div>
+            <p class="click-text">Click Aquí</p>
+        </div>
+    </div>
+
+    <div id="side-menu" class="menu-hidden">
+        <button class="close-menu" onclick="toggleMenu()">✕</button>
+        <nav>
+            <a href="#inicio" onclick="toggleMenu()">INICIO</a>
+            <a href="#itinerario" onclick="toggleMenu()">ITINERARIO</a>
+            <a href="#historia" onclick="toggleMenu()">NUESTRA HISTORIA</a>
+            <a href="#regalos" onclick="toggleMenu()">MESA DE REGALOS</a>
+        </nav>
+    </div>
+    <button class="menu-trigger" onclick="toggleMenu()">☰</button>
+
+    <main id="main-content">
+        <section id="inicio" class="hero">
+            <h1>ALICIA & MARIO</h1>
+            <p>18 . 12 . 2026</p>
+        </section>
+
+        <section class="padrinos">
+            <h3>Padrinos</h3>
+            <div class="swiper swiper-padrinos">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="icon-padrino">❤</div>
+                        <p><b>Velación</b><br>Victor Alfonso & Brenda del Rocío</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="icon-padrino">💍</div>
+                        <p><b>Anillos</b><br>Juan Pérez & María López</p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.0.9/index.min.js"></script>
+    <script src="script.js?v=2.0"></script>
+</body>
+</html>
