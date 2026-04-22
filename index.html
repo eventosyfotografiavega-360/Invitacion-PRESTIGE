@@ -3,79 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Digital | Vega 360</title>
-    
+    <title>Mis XV | Elizabeth</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
-    <link rel="stylesheet" href="style.css?v=2.1">
+    <link rel="stylesheet" href="style.css?v=3.0">
 </head>
 <body>
 
     <div id="envelope-wrapper" onclick="openEnvelope()">
-        <div class="envelope">
+        <div class="envelope-content">
             <div class="wax-seal">
-                <span class="initials">E</span>
+                <span class="seal-letter">E</span>
             </div>
-            <p class="click-text">Click Aquí</p>
+            <p class="click-hint">Click Aquí</p>
         </div>
     </div>
 
     <div class="menu-trigger" onclick="toggleMenu()">☰</div>
-
     <div id="side-menu">
         <button class="close-btn" onclick="toggleMenu()">✕</button>
         <nav>
             <a href="#inicio" onclick="toggleMenu()">INICIO</a>
             <a href="#itinerario" onclick="toggleMenu()">ITINERARIO</a>
-            <a href="#galeria" onclick="toggleMenu()">GALERÍA</a>
+            <a href="#pases" onclick="toggleMenu()">CONFIRMAR ASISTENCIA</a>
             <a href="#ubicacion" onclick="toggleMenu()">UBICACIÓN</a>
         </nav>
     </div>
 
+    <audio id="miMusica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
+
     <main id="main-content">
         
         <section id="inicio" class="hero">
-            <div class="hero-text">
+            <div class="hero-overlay">
                 <h1>Elizabeth</h1>
                 <p class="hero-date">18 . 03 . 2026</p>
             </div>
         </section>
 
-        <section class="intro-text">
-            <p>Con mucha ilusión y emoción, quiero compartir con ustedes un momento muy especial de mi vida.</p>
-            <h2 class="script-font">¡Los espero para celebrar mis 15 años juntos!</h2>
+        <section class="intro">
+            <p>Con mucha ilusión y emoción, quiero compartir con ustedes un momento muy especial.</p>
+            <h2 class="italic-gold">¡Los espero para celebrar juntos!</h2>
         </section>
 
-        <section id="itinerario" class="itinerario">
-            <h3 class="section-title">Itinerario</h3>
-            <div class="timeline">
-                <div class="event">
-                    <span class="icon">⛪</span>
-                    <h4>Ceremonia</h4>
-                    <p>5:00 PM</p>
+        <section id="pases" class="pases-section">
+            <div class="pases-card">
+                <h3>¡ES UN PLACER INVITARLOS!</h3>
+                <p>Aquí va el mensaje a tus invitados</p>
+                <div class="pases-number">
+                    <span id="num-pases">2</span>
+                    <p>Pases</p>
                 </div>
-                <div class="event">
-                    <span class="icon">🥂</span>
-                    <h4>Recepción</h4>
-                    <p>6:00 PM</p>
-                </div>
-                <div class="event">
-                    <span class="icon">🍽</span>
-                    <h4>Cena</h4>
-                    <p>8:30 PM</p>
-                </div>
+                <button class="btn-confirmar" onclick="openRSVP()">Confirmar asistencia</button>
             </div>
         </section>
 
+        <section class="countdown-section">
+            <h2 class="italic-gold">¡No te lo pierdas!</h2>
+            <div id="timer">
+                <div class="t-block"><span id="days">00</span><p>Días</p></div>
+                <div class="t-block"><span id="hours">00</span><p>Hrs</p></div>
+                <div class="t-block"><span id="mins">00</span><p>Min</p></div>
+                <div class="t-block"><span id="secs">00</span><p>Seg</p></div>
+            </div>
+        </section>
+
+        <section id="itinerario" class="itinerario-section">
+            <h3 class="section-title">Itinerario</h3>
+            <div class="timeline">
+                <div class="t-item"><span>⛪</span><p>Misa - 5:00 PM</p></div>
+                <div class="t-item"><span>🥂</span><p>Recepción - 7:00 PM</p></div>
+                <div class="t-item"><span>🍽</span><p>Cena - 9:00 PM</p></div>
+            </div>
+        </section>
     </main>
 
-    <audio id="miMusica" loop>
-        <source src="musica.mp3" type="audio/mpeg">
-    </audio>
+    <div id="rsvp-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeRSVP()">×</span>
+            <h3>Confirmar Pases</h3>
+            <p>Pases Adulto</p>
+            <input type="number" id="pases-input" value="2" min="1">
+            <button class="btn-final" onclick="sendWhatsApp()">Confirmar Asistencia</button>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js?v=2.1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.0.9/index.min.js"></script>
+    <script src="script.js?v=3.0"></script>
 </body>
 </html>
