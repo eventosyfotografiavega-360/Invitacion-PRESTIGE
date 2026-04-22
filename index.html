@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda Alicia y Mario | Vega 360</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400&family=Pinyon+Script&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
-    <link rel="stylesheet" href="style.css?v=5.1">
+    <link rel="stylesheet" href="style.css?v=6.0">
 </head>
 <body>
 
-    <div id="envelope-wrapper" onclick="openEnvelope()">
-        <div class="envelope">
-            <div class="wax-seal">
-                <span class="initials">A & M</span>
+    <div id="envelope-wrapper">
+        <div class="envelope" onclick="openEnvelope()">
+            <div class="flap"></div>
+            <div class="body"></div>
+            <div class="seal-container">
+                <div class="tooltip">Click Aquí</div>
+                <div class="wax-seal">
+                    <span class="initials">A & M</span>
+                </div>
             </div>
-            <p class="click-text">Click Aquí</p>
         </div>
     </div>
 
     <audio id="miMusica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
 
-    <main id="main-content">
-        
+    <main id="main-content" style="display:none; opacity:0;">
         <section id="inicio" class="hero">
             <div class="hero-overlay">
                 <h1 class="caligrafia-blanca">Alicia & Mario</h1>
@@ -33,83 +33,22 @@
             </div>
         </section>
 
-        <section class="countdown-section elegant-bg">
+        <section class="countdown-section">
             <div class="elegant-card">
                 <h2 class="script-oro">¡Nos casamos!</h2>
-                <p class="fecha-serif">Sábado 22 de Agosto 2026</p>
-                
                 <div id="timer">
                     <div class="t-block"><span id="days">00</span><p>Días</p></div>
                     <div class="t-block"><span id="hours">00</span><p>Hrs</p></div>
                     <div class="t-block"><span id="mins">00</span><p>Min</p></div>
                     <div class="t-block"><span id="secs">00</span><p>Seg</p></div>
                 </div>
-
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Alicia+y+Mario&dates=20260822T220000Z/20260823T040000Z&details=¡Estamos+muy+emocionados+de+compartir+este+día+con+ustedes!" target="_blank" class="btn-calendar">AGREGAR A CALENDARIO</a>
+                <a href="#" class="btn-calendar">AGREGAR A CALENDARIO</a>
             </div>
         </section>
-
-        <section class="parents-section elegant-bg">
-            <h3 class="serif-title">Con la bendición de Dios y de nuestros padres</h3>
-            
-            <div class="parents-grid">
-                <div class="parent-box">
-                    <h4>Padres de la novia</h4>
-                    <p>Nombre de la Madre</p>
-                    <p>Nombre del Padre</p>
-                </div>
-                <div class="parent-box">
-                    <h4>Padres del novio</h4>
-                    <p>Nombre de la Madre</p>
-                    <p>Nombre del Padre</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="padrinos-section elegant-bg">
-            <h2 class="script-oro">Padrinos</h2>
-            <div class="swiper swiper-padrinos">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="padrino-card">
-                            <span class="p-icon">❤</span>
-                            <h4>Velación</h4>
-                            <p>Victor Alfonso Contreras Gómez</p>
-                            <p>Brenda del Rocío González Lomelí</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="padrino-card">
-                            <span class="p-icon">💍</span>
-                            <h4>Anillos</h4>
-                            <p>Azul Daniela Llamas Torres</p>
-                            <p>Carlos Ramirez</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="padrino-card">
-                            <span class="p-icon">💰</span>
-                            <h4>Arras</h4>
-                            <p>Nombre Padrino 1</p>
-                            <p>Nombre Padrino 2</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="padrino-card">
-                            <span class="p-icon">∞</span>
-                            <h4>Lazo</h4>
-                            <p>Nombre Padrino 1</p>
-                            <p>Nombre Padrino 2</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-
-    </main>
+        
+        </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js?v=5.1"></script>
+    <script src="script.js?v=6.0"></script>
 </body>
 </html>
