@@ -1,23 +1,22 @@
-// Abrir el sobre al inicio
 function openEnvelope() {
     const wrapper = document.getElementById('envelope-wrapper');
+    const content = document.getElementById('main-content');
+    
     wrapper.style.opacity = '0';
     setTimeout(() => {
         wrapper.style.visibility = 'hidden';
-        // Aquí podrías iniciar la música automáticamente al abrir
-        if (musica.paused) musica.play();
+        content.style.opacity = '1'; // Esto hace que el contenido aparezca suavemente
+        // Si tienes música, aquí es donde debe empezar
+        if (typeof musica !== 'undefined') musica.play();
     }, 1000);
 }
 
-// Menú lateral
 function toggleMenu() {
-    const menu = document.getElementById('side-menu');
-    menu.classList.toggle('menu-visible');
+    document.getElementById('side-menu').classList.toggle('menu-visible');
 }
 
 // Inicializar el slider de Padrinos
-const swiperPadrinos = new Swiper('.swiper-padrinos', {
-    loop: true,
+const swiper = new Swiper('.swiper-padrinos', {
     pagination: { el: '.swiper-pagination' },
-    autoplay: { delay: 3000 },
+    loop: true,
 });
