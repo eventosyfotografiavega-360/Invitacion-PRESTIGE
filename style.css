@@ -1,20 +1,20 @@
 :root {
-    --rosa: #b0707e;
-    --crema: #f4ece6;
-    --dorado: #c5a880;
-    --oscuro: #4a4a4a;
+    --primary: #b0707e;
+    --bg: #f4ece6;
+    --white: #ffffff;
+    --text: #4a4a4a;
 }
 
 body {
     margin: 0; font-family: 'Montserrat', sans-serif;
-    background-color: var(--crema); color: var(--oscuro);
+    background-color: var(--bg); color: var(--text);
     text-align: center; overflow-x: hidden;
 }
 
-/* Sobre */
+/* Sobre Inicial */
 #envelope-wrapper {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: var(--rosa); z-index: 9999;
+    background-color: var(--primary); z-index: 9999;
     display: flex; justify-content: center; align-items: center;
     transition: transform 1s ease-in-out;
 }
@@ -25,38 +25,42 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2); cursor: pointer;
 }
 
-.seal-letter { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: white; }
+.seal-letter { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: white; }
 
-/* Hero */
+/* Contenido Principal */
 #main-content { opacity: 0; transition: opacity 1s; }
+
 .hero {
-    height: 100vh; background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover;
+    height: 100vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover;
     display: flex; align-items: center; justify-content: center; color: white;
 }
+
 .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; margin: 0; }
 
-/* Secciones */
-section { padding: 80px 20px; }
-.italic-gold { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--rosa); font-size: 2rem; }
-
-/* Pases Card */
+/* Tarjeta de Pases */
 .pases-card {
-    background: white; padding: 40px; border-radius: 5px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 400px; margin: 0 auto;
+    background: var(--white); padding: 40px 20px; border-radius: 4px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05); max-width: 350px; margin: 0 auto;
 }
-.pases-number { border: 1px solid #ddd; padding: 20px; margin: 20px 0; }
-.pases-number span { font-size: 3rem; color: var(--rosa); }
 
-/* Itinerario */
-.timeline { display: flex; flex-direction: column; gap: 30px; align-items: center; }
-.t-item span { font-size: 2.5rem; display: block; margin-bottom: 5px; }
+.pases-circle { border: 1px solid #eee; padding: 20px; margin: 25px 0; }
+.pases-circle span { font-size: 3.5rem; color: var(--primary); display: block; }
+
+/* Contador */
+#timer { display: flex; justify-content: center; gap: 15px; padding: 40px 0; }
+.time-box { background: var(--white); padding: 15px; min-width: 65px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+.time-box span { font-size: 1.5rem; display: block; }
 
 /* Menú Sidebar */
-.menu-trigger { position: fixed; top: 20px; right: 20px; z-index: 5000; background: white; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
-#side-menu { position: fixed; top: 0; right: -100%; width: 300px; height: 100%; background: white; z-index: 6000; transition: 0.4s; padding: 80px 20px; display: flex; flex-direction: column; gap: 20px; }
+.menu-trigger { position: fixed; top: 20px; right: 20px; z-index: 5000; background: white; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+#side-menu { position: fixed; top: 0; right: -100%; width: 100%; max-width: 300px; height: 100%; background: white; z-index: 6000; transition: 0.4s; padding: 100px 30px; display: flex; flex-direction: column; gap: 25px; text-align: left; }
 #side-menu.menu-visible { right: 0; }
-#side-menu a { text-decoration: none; color: var(--oscuro); font-size: 1.2rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+#side-menu a { text-decoration: none; color: var(--text); font-size: 1.1rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
 
-/* Modal RSVP */
-.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 7000; align-items: center; justify-content: center; }
-.modal-content { background: white; padding: 40px; border-radius: 10px; width: 90%; max-width: 400px; }
+/* Botones */
+.btn-action, .btn-send { background: var(--primary); color: white; border: none; padding: 15px 30px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; width: 100%; }
+
+/* Modal */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 8000; align-items: center; justify-content: center; }
+.modal-box { background: white; padding: 40px 20px; width: 90%; max-width: 400px; border-radius: 8px; position: relative; }
