@@ -1,91 +1,62 @@
 :root {
     --oro: #c5a880;
-    --crema: #f4ece6;
+    --crema: #fdfaf6;
     --sobre-bg: #f0e6d6;
-    --rosa-viejo: #b0707e;
 }
 
-body { margin: 0; background-color: var(--crema); overflow-x: hidden; }
+body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--crema); text-align: center; }
 
-/* CONTENEDOR DEL SOBRE */
+/* Sobre */
 #envelope-wrapper {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background-color: var(--crema); z-index: 9999;
     display: flex; justify-content: center; align-items: center;
-    perspective: 1000px; /* Necesario para el efecto 3D */
-    transition: transform 1s ease-in, opacity 1s;
+    perspective: 1000px; transition: transform 1s ease-in, opacity 1s;
 }
 
-.envelope {
-    position: relative; width: 300px; height: 200px;
-    background-color: var(--sobre-bg); cursor: pointer;
-}
-
-/* Solapa Superior */
+.envelope { position: relative; width: 300px; height: 200px; background-color: var(--sobre-bg); cursor: pointer; }
 .flap {
     position: absolute; top: 0; left: 0; width: 0; height: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-top: 100px solid #dcd0bc; /* Color un poco más oscuro para sombra */
-    transform-origin: top;
-    transition: transform 0.6s ease;
-    z-index: 3;
+    border-left: 150px solid transparent; border-right: 150px solid transparent;
+    border-top: 100px solid #dcd0bc; transform-origin: top; transition: transform 0.6s ease; z-index: 3;
 }
-
-/* Cuerpo del Sobre (Triángulos laterales y fondo) */
 .body {
     position: absolute; bottom: 0; width: 0; height: 0;
-    border-left: 150px solid #e6dbca;
-    border-right: 150px solid #e6dbca;
-    border-bottom: 100px solid #f0e6d6;
-    z-index: 2;
+    border-left: 150px solid #e6dbca; border-right: 150px solid #e6dbca;
+    border-bottom: 100px solid #f0e6d6; z-index: 2;
 }
-
-/* Sello de Cera */
-.seal-container {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -10%);
-    z-index: 4; text-align: center;
-    transition: opacity 0.4s ease;
-}
-
+.seal-container { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -10%); z-index: 4; }
 .wax-seal {
-    width: 80px; height: 80px;
-    background: radial-gradient(circle, #e6bc5c 0%, #b38b2d 100%);
-    border-radius: 50%; border: 2px solid #99741d;
-    display: flex; justify-content: center; align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 80px; height: 80px; background: radial-gradient(circle, #e6bc5c 0%, #b38b2d 100%);
+    border-radius: 50%; border: 2px solid #99741d; display: flex; justify-content: center; align-items: center;
 }
-
 .initials { font-family: 'Pinyon Script', cursive; font-size: 1.8rem; color: white; }
-
-/* Tooltip "Click Aquí" */
-.tooltip {
-    background: var(--oro); color: white; padding: 5px 15px;
-    border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px;
-    display: inline-block; position: relative;
-    animation: bounce 2s infinite;
-}
-
-.tooltip::after {
-    content: ''; position: absolute; top: 100%; left: 50%;
-    border: 5px solid transparent; border-top-color: var(--oro);
-    transform: translateX(-50%);
-}
-
-/* Animación cuando se abre */
+.tooltip { background: var(--oro); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px; animation: bounce 2s infinite; }
 .envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
-.envelope.open .seal-container { opacity: 0; pointer-events: none; }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-/* --- ESTILOS DEL CONTENIDO (Hero, etc.) --- */
+/* Contenido Principal */
 .hero {
     height: 100vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
     url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover;
     display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;
 }
 .caligrafia-blanca { font-family: 'Pinyon Script', cursive; font-size: 5rem; margin: 0; }
+
+/* Secciones */
+section { padding: 80px 20px; }
+.elegant-card { background: white; padding: 50px 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); max-width: 500px; margin: 0 auto; }
+.script-oro { font-family: 'Pinyon Script', cursive; font-size: 4rem; color: var(--oro); margin: 0; }
+#timer { display: flex; justify-content: center; gap: 15px; margin: 40px 0; }
+.t-block { background: var(--crema); padding: 15px; min-width: 70px; }
+.t-block span { font-size: 1.8rem; display: block; color: var(--oro); }
+.btn-calendar { display: inline-block; padding: 15px 30px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; letter-spacing: 2px; font-size: 0.75rem; }
+
+/* Padres */
+.parents-grid { display: flex; flex-direction: column; gap: 40px; margin-top: 40px; }
+.parent-box h4 { font-family: 'Cormorant Garamond', serif; text-transform: uppercase; letter-spacing: 2px; color: var(--oro); }
+
+/* Padrinos */
+.padrino-card { background: white; padding: 60px 20px; border-radius: 8px; margin: 0 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+.p-icon { font-size: 3rem; color: var(--oro); display: block; margin-bottom: 15px; }
+
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
