@@ -3,92 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Digital | Elizabeth</title>
+    <title>Boda Alicia y Mario | Vega 360</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400&family=Pinyon+Script&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
-    <link rel="stylesheet" href="style.css?v=4.0">
+    <link rel="stylesheet" href="style.css?v=5.1">
 </head>
 <body>
 
     <div id="envelope-wrapper" onclick="openEnvelope()">
-        <div class="envelope-content">
+        <div class="envelope">
             <div class="wax-seal">
-                <span class="seal-letter">E</span>
+                <span class="initials">A & M</span>
             </div>
-            <p class="click-hint">Click Aquí</p>
+            <p class="click-text">Click Aquí</p>
         </div>
     </div>
 
-    <div class="menu-trigger" onclick="toggleMenu()">☰</div>
-
-    <div id="side-menu">
-        <button class="close-btn" onclick="toggleMenu()">✕</button>
-        <nav>
-            <a href="#inicio" onclick="toggleMenu()">INICIO</a>
-            <a href="#pases" onclick="toggleMenu()">PASES</a>
-            <a href="#itinerario" onclick="toggleMenu()">ITINERARIO</a>
-            <a href="#ubicacion" onclick="toggleMenu()">UBICACIÓN</a>
-        </nav>
-    </div>
-
-    <audio id="miMusica" loop>
-        <source src="musica.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="miMusica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
 
     <main id="main-content">
         
         <section id="inicio" class="hero">
             <div class="hero-overlay">
-                <h1>Elizabeth</h1>
-                <p class="hero-date">18 . 03 . 2026</p>
+                <h1 class="caligrafia-blanca">Alicia & Mario</h1>
+                <p class="fecha-hero">22 . 08 . 2026</p>
             </div>
         </section>
 
-        <section id="pases" class="pases-section">
-            <div class="pases-card">
-                <h3>¡ES UN PLACER INVITARLOS!</h3>
-                <div class="pases-circle">
-                    <span id="num-pases">2</span>
-                    <p>Pases</p>
+        <section class="countdown-section elegant-bg">
+            <div class="elegant-card">
+                <h2 class="script-oro">¡Nos casamos!</h2>
+                <p class="fecha-serif">Sábado 22 de Agosto 2026</p>
+                
+                <div id="timer">
+                    <div class="t-block"><span id="days">00</span><p>Días</p></div>
+                    <div class="t-block"><span id="hours">00</span><p>Hrs</p></div>
+                    <div class="t-block"><span id="mins">00</span><p>Min</p></div>
+                    <div class="t-block"><span id="secs">00</span><p>Seg</p></div>
                 </div>
-                <button class="btn-action" onclick="openRSVP()">Confirmar Asistencia</button>
+
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Alicia+y+Mario&dates=20260822T220000Z/20260823T040000Z&details=¡Estamos+muy+emocionados+de+compartir+este+día+con+ustedes!" target="_blank" class="btn-calendar">AGREGAR A CALENDARIO</a>
             </div>
         </section>
 
-        <section class="countdown-section">
-            <h2 class="script-title">¡No te lo pierdas!</h2>
-            <div id="timer">
-                <div class="time-box"><span id="days">00</span><p>Días</p></div>
-                <div class="time-box"><span id="hours">00</span><p>Hrs</p></div>
-                <div class="time-box"><span id="mins">00</span><p>Min</p></div>
-                <div class="time-box"><span id="secs">00</span><p>Seg</p></div>
+        <section class="parents-section elegant-bg">
+            <h3 class="serif-title">Con la bendición de Dios y de nuestros padres</h3>
+            
+            <div class="parents-grid">
+                <div class="parent-box">
+                    <h4>Padres de la novia</h4>
+                    <p>Nombre de la Madre</p>
+                    <p>Nombre del Padre</p>
+                </div>
+                <div class="parent-box">
+                    <h4>Padres del novio</h4>
+                    <p>Nombre de la Madre</p>
+                    <p>Nombre del Padre</p>
+                </div>
             </div>
         </section>
 
-        <section id="itinerario" class="itinerario-section">
-            <h3 class="section-title">Itinerario</h3>
-            <div class="itinerary-grid">
-                <div class="it-item"><span>⛪</span><p>Misa<br>5:00 PM</p></div>
-                <div class="it-item"><span>🥂</span><p>Recepción<br>7:00 PM</p></div>
-                <div class="it-item"><span>🍽</span><p>Cena<br>9:00 PM</p></div>
+        <section class="padrinos-section elegant-bg">
+            <h2 class="script-oro">Padrinos</h2>
+            <div class="swiper swiper-padrinos">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="padrino-card">
+                            <span class="p-icon">❤</span>
+                            <h4>Velación</h4>
+                            <p>Victor Alfonso Contreras Gómez</p>
+                            <p>Brenda del Rocío González Lomelí</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="padrino-card">
+                            <span class="p-icon">💍</span>
+                            <h4>Anillos</h4>
+                            <p>Azul Daniela Llamas Torres</p>
+                            <p>Carlos Ramirez</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="padrino-card">
+                            <span class="p-icon">💰</span>
+                            <h4>Arras</h4>
+                            <p>Nombre Padrino 1</p>
+                            <p>Nombre Padrino 2</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="padrino-card">
+                            <span class="p-icon">∞</span>
+                            <h4>Lazo</h4>
+                            <p>Nombre Padrino 1</p>
+                            <p>Nombre Padrino 2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
+
     </main>
 
-    <div id="rsvp-modal" class="modal">
-        <div class="modal-box">
-            <span class="close-modal" onclick="closeRSVP()">×</span>
-            <h3>Confirmar Asistencia</h3>
-            <label>Pases Adulto:</label>
-            <input type="number" id="guest-count" value="2" min="1">
-            <button class="btn-send" onclick="sendToWhatsApp()">Confirmar por WhatsApp</button>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js?v=4.0"></script>
+    <script src="script.js?v=5.1"></script>
 </body>
 </html>
