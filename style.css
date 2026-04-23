@@ -8,16 +8,125 @@
 
 body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--crema); text-align: center; color: var(--texto); overflow-x: hidden; }
 
-/* Sobre 3D */
-#envelope-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--crema); z-index: 9999; display: flex; justify-content: center; align-items: center; perspective: 1000px; transition: transform 1s ease-in, opacity 1s; }
-.envelope { position: relative; width: 300px; height: 200px; background-color: var(--sobre-bg); cursor: pointer; }
-.flap { position: absolute; top: 0; left: 0; width: 0; height: 0; border-left: 150px solid transparent; border-right: 150px solid transparent; border-top: 100px solid #dcd0bc; transform-origin: top; transition: transform 0.6s ease; z-index: 3; }
-.body { position: absolute; bottom: 0; width: 0; height: 0; border-left: 150px solid #e6dbca; border-right: 150px solid #e6dbca; border-bottom: 100px solid #f0e6d6; z-index: 2; }
-.seal-container { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -10%); z-index: 4; text-align: center; }
-.wax-seal { width: 80px; height: 80px; background: radial-gradient(circle, #e6bc5c 0%, #b38b2d 100%); border-radius: 50%; border: 2px solid #99741d; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-.initials { font-family: 'Pinyon Script', cursive; font-size: 1.8rem; color: white; }
-.tooltip { background: var(--oro); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px; display: inline-block; animation: bounce 2s infinite; }
-.envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
+/* -----------------------------------------------------------
+   1. SOBRE 3D (INTERACTIVO) - CORREGIDO
+   ----------------------------------------------------------- */
+#envelope-wrapper {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--crema);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    transition: transform 1s ease-in, opacity 1s;
+}
+
+.envelope {
+    position: relative;
+    /* Mantenemos el tamaño base del sobre */
+    width: 300px;
+    height: 200px;
+    background-color: var(--sobre-bg);
+    cursor: pointer;
+}
+
+/* Solapas y Cuerpo (Quedan igual) */
+.flap {
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #dcd0bc;
+    transform-origin: top;
+    transition: transform 0.6s ease;
+    z-index: 3;
+}
+
+.body {
+    position: absolute;
+    bottom: 0;
+    width: 0; height: 0;
+    border-left: 150px solid #e6dbca;
+    border-right: 150px solid #e6dbca;
+    border-bottom: 100px solid #f0e6d6;
+    z-index: 2;
+}
+
+/* -----------------------------------------------------------
+   AQUÍ ESTÁ LA CORRECCIÓN DEL SELLO Y LAS INICIALES
+   ----------------------------------------------------------- */
+.seal-container {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -10%);
+    z-index: 4;
+    text-align: center;
+}
+
+.wax-seal {
+    /* Mantenemos el tamaño del sello */
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #e6bc5c 0%, #b38b2d 100%);
+    border-radius: 50%;
+    border: 2px solid #99741d;
+    
+    /* CORRECCIÓN 1: Centrado absoluto del contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* CORRECCIÓN 2: Padding de seguridad para que no toquen el borde */
+    padding: 10px; 
+    box-sizing: border-box; /* Importante para que el padding no agrande el sello */
+    
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.initials {
+    font-family: 'Pinyon Script', cursive;
+    color: white;
+    margin: 0;
+    
+    /* CORRECCIÓN 3: Ajuste de tamaño y escalado */
+    font-size: 1.6rem; /* Bajamos un poco el tamaño base */
+    line-height: 1;
+    
+    /* CORRECCIÓN 4: "display: block" para que el padding funcione mejor */
+    display: block; 
+    
+    /* CORRECCIÓN 5: SVG scaling - nos aseguramos de que no desborde */
+    max-width: 100%;
+    max-height: 100%;
+    overflow: visible; /* Para que la tipografía cursiva no se corte */
+}
+
+/* Tooltip (Queda igual) */
+.tooltip {
+    background: var(--oro);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+/* Estado Abierto */
+.envelope.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
 
 /* Hero */
 .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; }
