@@ -16,7 +16,7 @@ function openEnvelope() {
     }, 800);
 }
 
-// 2. INICIALIZAR CARRUSELES
+// 2. INICIALIZAR CARRUSELES (Swiper)
 const swiperPadrinos = new Swiper('.swiper-padrinos', {
     loop: true,
     navigation: { nextEl: '.swiper-padrinos .swiper-button-next', prevEl: '.swiper-padrinos .swiper-button-prev' },
@@ -27,14 +27,20 @@ const swiperItinerario = new Swiper('.swiper-itinerario', {
     navigation: { nextEl: '.swiper-itinerario .swiper-button-next', prevEl: '.swiper-itinerario .swiper-button-prev' },
 });
 
-// NUEVO: Swiper para Nuestra Historia
 const swiperHistoria = new Swiper('.swiper-historia', {
     loop: true,
     pagination: { el: '.swiper-pagination', clickable: true },
     navigation: { nextEl: '.swiper-historia .swiper-button-next', prevEl: '.swiper-historia .swiper-button-prev' },
 });
 
-// 3. CUENTA REGRESIVA
+// 3. DESPLEGAR BUENOS DESEOS
+function toggleWishes() {
+    const list = document.getElementById('wishes-list');
+    list.style.display = (list.style.display === 'none') ? 'flex' : 'none';
+    if (list.style.display === 'flex') list.scrollIntoView({ behavior: 'smooth' });
+}
+
+// 4. CONTADOR REGRESIVO
 const weddingDate = new Date("August 22, 2026 18:00:00").getTime();
 setInterval(() => {
     const now = new Date().getTime();
