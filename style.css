@@ -8,159 +8,63 @@
 
 body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--crema); text-align: center; color: var(--texto); overflow-x: hidden; }
 
-/* -----------------------------------------------------------
-   1. SOBRE 3D (INTERACTIVO) - CORREGIDO
-   ----------------------------------------------------------- */
-#envelope-wrapper {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: var(--crema);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000px;
-    transition: transform 1s ease-in, opacity 1s;
+/* --- EL SOBRE (AGRANDADO) --- */
+#envelope-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--crema); z-index: 9999; display: flex; justify-content: center; align-items: center; perspective: 1000px; transition: transform 1s ease-in, opacity 1s; }
+
+.envelope { position: relative; width: 350px; height: 230px; background-color: var(--sobre-bg); cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+.flap { position: absolute; top: 0; left: 0; width: 0; height: 0; border-left: 175px solid transparent; border-right: 175px solid transparent; border-top: 115px solid #dcd0bc; transform-origin: top; transition: transform 0.6s ease; z-index: 3; }
+
+.body { position: absolute; bottom: 0; width: 0; height: 0; border-left: 175px solid #e6dbca; border-right: 175px solid #e6dbca; border-bottom: 115px solid #f0e6d6; z-index: 2; }
+
+/* SELLO Y CENTRADO PERFECTO DE INICIALES */
+.seal-container { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -15%); z-index: 4; text-align: center; }
+
+.wax-seal { 
+    width: 110px; height: 110px; /* Sello más grande */
+    background: radial-gradient(circle, #e6bc5c 0%, #b38b2d 100%); 
+    border-radius: 50%; border: 2px solid #99741d; 
+    display: flex; justify-content: center; align-items: center; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+    padding: 10px; box-sizing: border-box; 
 }
 
-.envelope {
-    position: relative;
-    /* Mantenemos el tamaño base del sobre */
-    width: 300px;
-    height: 200px;
-    background-color: var(--sobre-bg);
-    cursor: pointer;
+.initials { 
+    font-family: 'Pinyon Script', cursive; 
+    font-size: 2rem; /* Tamaño optimizado para el nuevo sello */
+    color: white; 
+    white-space: nowrap; /* EVITA QUE SE ENCIMEN LAS LETRAS */
+    line-height: 1; 
+    display: block;
+    transform: translateY(5px); /* AJUSTE ÓPTICO PARA FUENTES CURSIVAS */
 }
 
-/* Solapas y Cuerpo (Quedan igual) */
-.flap {
-    position: absolute;
-    top: 0; left: 0;
-    width: 0; height: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-top: 100px solid #dcd0bc;
-    transform-origin: top;
-    transition: transform 0.6s ease;
-    z-index: 3;
-}
+.tooltip { background: var(--oro); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px; display: inline-block; animation: bounce 2s infinite; }
+.envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
 
-.body {
-    position: absolute;
-    bottom: 0;
-    width: 0; height: 0;
-    border-left: 150px solid #e6dbca;
-    border-right: 150px solid #e6dbca;
-    border-bottom: 100px solid #f0e6d6;
-    z-index: 2;
-}
-
-/* -----------------------------------------------------------
-   AQUÍ ESTÁ LA CORRECCIÓN DEL SELLO Y LAS INICIALES
-   ----------------------------------------------------------- */
-.seal-container {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -10%);
-    z-index: 4;
-    text-align: center;
-}
-
-.wax-seal {
-    /* Mantenemos el tamaño del sello */
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle, #e6bc5c 0%, #b38b2d 100%);
-    border-radius: 50%;
-    border: 2px solid #99741d;
-    
-    /* CORRECCIÓN 1: Centrado absoluto del contenido */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* CORRECCIÓN 2: Padding de seguridad para que no toquen el borde */
-    padding: 10px; 
-    box-sizing: border-box; /* Importante para que el padding no agrande el sello */
-    
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.initials {
-    font-family: 'Pinyon Script', cursive;
-    color: white;
-    margin: 0;
-    
-    /* CORRECCIÓN 3: Ajuste de tamaño y escalado */
-    font-size: 1.6rem; /* Bajamos un poco el tamaño base */
-    line-height: 1;
-    
-    /* CORRECCIÓN 4: "display: block" para que el padding funcione mejor */
-    display: block; 
-    
-    /* CORRECCIÓN 5: SVG scaling - nos aseguramos de que no desborde */
-    max-width: 100%;
-    max-height: 100%;
-    overflow: visible; /* Para que la tipografía cursiva no se corte */
-}
-
-/* Tooltip (Queda igual) */
-.tooltip {
-    background: var(--oro);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    margin-bottom: 10px;
-    display: inline-block;
-    animation: bounce 2s infinite;
-}
-
-/* Estado Abierto */
-.envelope.open .flap {
-    transform: rotateX(180deg);
-    z-index: 1;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-/* Hero */
+/* --- CONTENIDO --- */
 .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; }
 .caligrafia-blanca { font-family: 'Pinyon Script', cursive; font-size: 5rem; margin: 0; font-weight: 100; }
 .fecha-hero { font-size: 0.9rem; letter-spacing: 3px; color: rgba(255,255,255,0.8); margin-top: 10px; }
 
-/* Secciones y Card de Contador */
 section { padding: 100px 20px; }
 .elegant-bg { background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); }
 .elegant-card { background: var(--white); padding: 60px 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
 .script-oro { font-family: 'Pinyon Script', cursive; font-size: 4rem; color: var(--oro); margin: 0; }
-.fecha-grande { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin: 20px 0; font-weight: 300; }
 
-/* Contador en Cuadros */
-#timer { display: flex; justify-content: center; gap: 15px; margin: 40px 0; }
-.t-block { background: var(--white); padding: 20px 15px; min-width: 80px; border-radius: 2px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+/* Contador Cuadrados */
+#timer { display: flex; justify-content: center; gap: 10px; margin: 40px 0; }
+.t-block { background: var(--white); padding: 15px 10px; min-width: 75px; border-radius: 2px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
 .t-block span { font-size: 1.8rem; display: block; color: var(--oro); font-weight: 300; }
-.t-block p { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; color: #888; }
+.t-block p { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-top: 5px; }
 
-.btn-calendar, .btn-maps { display: inline-block; padding: 15px 30px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s; margin-top: 20px; }
+.btn-calendar, .btn-maps { display: inline-block; padding: 15px 30px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase; margin-top: 20px; transition: 0.3s; }
 .btn-maps:hover { background: var(--oro); color: white; }
 
-/* Padres */
-.serif-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; font-weight: 300; }
-.parents-grid { display: flex; flex-direction: column; gap: 40px; margin-top: 40px; }
-.parent-box h4 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: var(--oro); font-weight: 300; font-size: 0.8rem; }
-
-/* Padrinos */
-.padrino-card { background: var(--white); padding: 60px 20px; border-radius: 8px; margin: 0 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-.p-icon { font-size: 3rem; color: var(--oro); display: block; margin-bottom: 15px; }
-
-/* Itinerario Mejorado */
-.itinerary-card { background: var(--white); padding: 70px 20px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); position: relative; margin: 0 10px; min-height: 400px; display: flex; flex-direction: column; justify-content: center; }
+/* Itinerario */
+.itinerary-card { background: var(--white); padding: 70px 20px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); position: relative; margin: 0 10px; min-height: 420px; display: flex; flex-direction: column; justify-content: center; }
 .itin-icon { color: var(--oro); font-size: 3.5rem; margin-bottom: 25px; }
-.itin-arrow { color: #dddddd; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; }
+.itin-time { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--oro); margin: 10px 0; }
+.itin-arrow { color: #dddddd; top: 50%; transform: translateY(-50%); width: 30px; }
 
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
