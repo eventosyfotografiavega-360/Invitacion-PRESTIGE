@@ -28,7 +28,7 @@ const swiperItinerario = new Swiper('.swiper-itinerario', {
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
 });
 
-// 3. CONTADOR REGRESIVO (22 de Agosto 2026)
+// 3. CUENTA REGRESIVA
 const weddingDate = new Date("August 22, 2026 18:00:00").getTime();
 setInterval(() => {
     const now = new Date().getTime();
