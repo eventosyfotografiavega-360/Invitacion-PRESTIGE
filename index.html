@@ -7,9 +7,11 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;300;400&family=Pinyon+Script&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
-    <link rel="stylesheet" href="style.css?v=8.0">
+    <link rel="stylesheet" href="style.css?v=9.0">
 </head>
 <body>
 
@@ -19,9 +21,7 @@
             <div class="body"></div>
             <div class="seal-container">
                 <div class="tooltip">Click Aquí</div>
-                <div class="wax-seal">
-                    <span class="initials">A & M</span>
-                </div>
+                <div class="wax-seal"><span class="initials">A & M</span></div>
             </div>
         </div>
     </div>
@@ -41,14 +41,12 @@
             <div class="elegant-card">
                 <h2 class="script-oro">¡Nos casamos!</h2>
                 <p class="fecha-grande">Sábado 22 de Agosto 2026</p>
-                
                 <div id="timer">
                     <div class="t-block"><span id="days">00</span><p>Días</p></div>
                     <div class="t-block"><span id="hours">00</span><p>Hrs</p></div>
                     <div class="t-block"><span id="mins">00</span><p>Min</p></div>
                     <div class="t-block"><span id="secs">00</span><p>Seg</p></div>
                 </div>
-
                 <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Alicia+y+Mario&dates=20260822T220000Z/20260823T040000Z" target="_blank" class="btn-calendar">AGREGAR A CALENDARIO</a>
             </div>
         </section>
@@ -58,13 +56,11 @@
             <div class="parents-grid">
                 <div class="parent-box">
                     <h4>Padres de la novia</h4>
-                    <p>María Gutierrez</p>
-                    <p>Pedro Sánchez</p>
+                    <p>María Gutierrez</p><p>Pedro Sánchez</p>
                 </div>
                 <div class="parent-box">
                     <h4>Padres del novio</h4>
-                    <p>Laura Rodríguez</p>
-                    <p>Ricardo Martínez</p>
+                    <p>Laura Rodríguez</p><p>Ricardo Martínez</p>
                 </div>
             </div>
         </section>
@@ -74,28 +70,10 @@
             <div class="swiper swiper-padrinos">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="padrino-card">
-                            <span class="p-icon">❤</span>
-                            <h4>Velación</h4>
-                            <p>Victor Alfonso Contreras Gómez</p>
-                            <p>Brenda del Rocío González Lomelí</p>
-                        </div>
+                        <div class="padrino-card"><span class="p-icon">❤</span><h4>Velación</h4><p>Victor Alfonso Contreras Gómez</p><p>Brenda del Rocío González Lomelí</p></div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="padrino-card">
-                            <span class="p-icon">💍</span>
-                            <h4>Anillos</h4>
-                            <p>Azul Daniela Llamas Torres</p>
-                            <p>Carlos Ramirez</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="padrino-card">
-                            <span class="p-icon">💰</span>
-                            <h4>Arras</h4>
-                            <p>Nombre del Padrino</p>
-                            <p>Nombre de la Madrina</p>
-                        </div>
+                        <div class="padrino-card"><span class="p-icon">💍</span><h4>Anillos</h4><p>Azul Daniela Llamas Torres</p><p>Carlos Ramirez</p></div>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -111,9 +89,11 @@
                         <div class="itinerary-card">
                             <div class="swiper-button-prev itin-arrow"></div>
                             <div class="itin-content">
-                                <h4>IGLESIA</h4>
-                                <p class="itin-time">1:00 PM</p>
-                                <p class="itin-loc">Catedral de la Ciudad</p>
+                                <i class="fa-solid fa-church itin-icon"></i>
+                                <h4>BODA RELIGIOSA</h4>
+                                <p class="itin-time">4:00 PM</p>
+                                <p class="itin-loc">Parroquia Santa María de Guadalupe</p>
+                                <a href="https://maps.app.goo.gl/b92SsCdkbfCHeWMx8" target="_blank" class="btn-maps">¿CÓMO LLEGAR?</a>
                             </div>
                             <div class="swiper-button-next itin-arrow"></div>
                         </div>
@@ -123,9 +103,11 @@
                         <div class="itinerary-card">
                             <div class="swiper-button-prev itin-arrow"></div>
                             <div class="itin-content">
-                                <h4>BODA CIVIL</h4>
-                                <p class="itin-time">3:30 PM</p>
-                                <p class="itin-loc">Oficialía 1</p>
+                                <i class="fa-solid fa-scroll itin-icon"></i>
+                                <h4>BODA AL CIVIL</h4>
+                                <p class="itin-time">6:00 PM</p>
+                                <p class="itin-loc">Oficialía 1 de Ciudad Acuña</p>
+                                <a href="https://maps.app.goo.gl/x" target="_blank" class="btn-maps">¿CÓMO LLEGAR?</a>
                             </div>
                             <div class="swiper-button-next itin-arrow"></div>
                         </div>
@@ -135,9 +117,11 @@
                         <div class="itinerary-card">
                             <div class="swiper-button-prev itin-arrow"></div>
                             <div class="itin-content">
+                                <i class="fa-solid fa-book-open itin-icon"></i>
                                 <h4>RECEPCIÓN</h4>
-                                <p class="itin-time">5:00 PM</p>
-                                <p class="itin-loc">Salón de Eventos Royal</p>
+                                <p class="itin-time">7:00 PM</p>
+                                <p class="itin-loc">Salón de Eventos Hacienda</p>
+                                <a href="https://maps.app.goo.gl/x" target="_blank" class="btn-maps">¿CÓMO LLEGAR?</a>
                             </div>
                             <div class="swiper-button-next itin-arrow"></div>
                         </div>
@@ -147,9 +131,11 @@
                         <div class="itinerary-card">
                             <div class="swiper-button-prev itin-arrow"></div>
                             <div class="itin-content">
+                                <i class="fa-solid fa-bell-concierge itin-icon"></i>
                                 <h4>CENA</h4>
-                                <p class="itin-time">8:30 PM</p>
-                                <p class="itin-loc">Catering por Cheff</p>
+                                <p class="itin-time">9:00 PM</p>
+                                <p class="itin-loc">Menú de Tres Tiempos</p>
+                                <a href="https://maps.app.goo.gl/x" target="_blank" class="btn-maps">¿CÓMO LLEGAR?</a>
                             </div>
                             <div class="swiper-button-next itin-arrow"></div>
                         </div>
@@ -159,22 +145,23 @@
                         <div class="itinerary-card">
                             <div class="swiper-button-prev itin-arrow"></div>
                             <div class="itin-content">
+                                <i class="fa-solid fa-music itin-icon"></i>
                                 <h4>FIESTA</h4>
-                                <p class="itin-time">9:00 PM - 2:00 AM</p>
-                                <p class="itin-loc">DJ Vega 360 Experiences</p>
+                                <p class="itin-time">10:00 PM</p>
+                                <p class="itin-loc">DJ Residente</p>
+                                <a href="https://maps.app.goo.gl/x" target="_blank" class="btn-maps">¿CÓMO LLEGAR?</a>
                             </div>
                             <div class="swiper-button-next itin-arrow"></div>
                         </div>
                     </div>
 
                 </div>
-                </div>
+            </div>
         </section>
 
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.0.9/index.min.js"></script>
-    <script src="script.js?v=8.0"></script>
+    <script src="script.js?v=9.0"></script>
 </body>
 </html>
