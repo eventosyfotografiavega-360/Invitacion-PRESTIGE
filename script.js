@@ -27,6 +27,13 @@ const swiperItinerario = new Swiper('.swiper-itinerario', {
     navigation: { nextEl: '.swiper-itinerario .swiper-button-next', prevEl: '.swiper-itinerario .swiper-button-prev' },
 });
 
+// NUEVO: Swiper para Nuestra Historia
+const swiperHistoria = new Swiper('.swiper-historia', {
+    loop: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-historia .swiper-button-next', prevEl: '.swiper-historia .swiper-button-prev' },
+});
+
 // 3. CUENTA REGRESIVA
 const weddingDate = new Date("August 22, 2026 18:00:00").getTime();
 setInterval(() => {
