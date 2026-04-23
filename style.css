@@ -15,96 +15,38 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(-
 .body { position: absolute; bottom: 0; width: 0; height: 0; border-left: 175px solid #e6dbca; border-right: 175px solid #e6dbca; border-bottom: 115px solid #f0e6d6; z-index: 2; }
 .seal-container { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -15%); z-index: 4; text-align: center; }
 .wax-seal { width: 110px; height: 110px; background: radial-gradient(circle, #e6bc5c 0%, #b38b2d 100%); border-radius: 50%; border: 2px solid #99741d; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2); padding: 10px; box-sizing: border-box; }
-.initials { font-family: 'Pinyon Script', cursive; font-size: 2rem; color: white; white-space: nowrap; line-height: 1; display: block; transform: translateY(5px); }
+.initials { font-family: 'Pinyon Script', cursive; font-size: 2.2rem; color: white; white-space: nowrap; line-height: 1; display: block; transform: translateY(5px); }
 .tooltip { background: var(--oro); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px; display: inline-block; animation: bounce 2s infinite; }
 .envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
 
-/* Hero */
+/* Hero y Secciones */
 .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; }
-.caligrafia-blanca { font-family: 'Pinyon Script', cursive; font-size: 5rem; margin: 0; font-weight: 100; }
-.fecha-hero { font-size: 0.9rem; letter-spacing: 3px; color: rgba(255,255,255,0.8); margin-top: 10px; }
-
-/* Secciones y Card Generales */
+.caligrafia-blanca { font-family: 'Pinyon Script', cursive; font-size: 5rem; margin: 0; }
 section { padding: 100px 20px; }
 .elegant-bg { background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); }
 .elegant-card { background: var(--white); padding: 60px 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+.script-oro { font-family: 'Pinyon Script', cursive; font-size: 4rem; color: var(--oro); margin: 0; }
+.padrino-nombre { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--oro); margin: 10px 0; font-weight: 300; line-height: 1.2; }
 
-/* TIPOGRAFÍA TÍTULOS (ESTILO PADRINOS/ITINERARIO) */
-.script-oro { 
-    font-family: 'Pinyon Script', cursive; 
-    font-size: 4rem; 
-    color: var(--oro); 
-    margin: 0; 
-}
+/* --- ENCAJE SECCIÓN PADRES --- */
+.parents-section { position: relative; padding: 140px 20px !important; overflow: hidden; }
+.parents-section::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-image: url('https://www.transparenttextures.com/patterns/p-2.png'); background-repeat: repeat-x; opacity: 0.5; border-bottom: 1px solid rgba(197, 168, 128, 0.2); }
+.parents-section::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background-image: url('https://www.transparenttextures.com/patterns/p-2.png'); background-repeat: repeat-x; transform: rotate(180deg); opacity: 0.5; border-bottom: 1px solid rgba(197, 168, 128, 0.2); }
 
-/* Ajuste para el título largo de Bendición */
-.title-long {
-    font-size: 3rem; /* Un poco más pequeño para que no se corte en móviles */
-    line-height: 1.2;
-    margin-bottom: 40px;
-}
-
-/* TIPOGRAFÍA PADRES Y NOMBRES DE PADRINOS (ESTILO VELACIÓN) */
-.padrino-nombre { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: 1.8rem; 
-    color: var(--oro); 
-    margin: 10px 0; 
-    font-weight: 300;
-    line-height: 1.2;
-}
-
-/* Resto de estilos */
-.fecha-grande { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin: 20px 0; font-weight: 300; }
-#timer { display: flex; justify-content: center; gap: 10px; margin: 40px 0; }
-.t-block { background: var(--white); padding: 15px 10px; min-width: 75px; border-radius: 2px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-.t-block span { font-size: 1.8rem; display: block; color: var(--oro); font-weight: 300; }
-.t-block p { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-top: 5px; }
-
-.btn-calendar, .btn-maps { display: inline-block; padding: 15px 30px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase; margin-top: 20px; transition: 0.3s; }
-.btn-maps:hover { background: var(--oro); color: white; }
-
-.itinerary-card { background: var(--white); padding: 70px 20px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); position: relative; margin: 0 10px; min-height: 420px; display: flex; flex-direction: column; justify-content: center; }
-.itin-icon { color: var(--oro); font-size: 3.5rem; margin-bottom: 25px; }
-.itin-content h4 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 3px; color: var(--texto); margin: 0 0 10px 0; font-weight: 400; }
-.itin-time { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--oro); margin: 10px 0; }
+/* --- TARJETAS UNIFICADAS --- */
+.itinerary-card, .historia-card { background: var(--white); padding: 60px 20px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); position: relative; margin: 0 10px; min-height: 420px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .itin-arrow { color: #dddddd; top: 50%; transform: translateY(-50%); width: 30px; }
 
-.parents-grid { display: flex; flex-direction: column; gap: 50px; margin-top: 40px; }
+/* --- ESTILO HISTORIA --- */
+.historia-img { width: 100%; max-width: 350px; height: auto; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 25px; }
+.historia-text { font-size: 0.95rem; line-height: 1.6; color: #777; margin: 15px 0; max-width: 300px; }
+.swiper-pagination-bullet-active { background: var(--oro) !important; }
+
+/* Otros */
+#timer { display: flex; justify-content: center; gap: 10px; margin: 40px 0; }
+.t-block { background: var(--white); padding: 15px 10px; min-width: 75px; border-radius: 2px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+.t-block span { font-size: 1.8rem; display: block; color: var(--oro); }
+.t-block p { font-size: 0.6rem; text-transform: uppercase; color: #888; margin-top: 5px; }
+.btn-calendar, .btn-maps { display: inline-block; padding: 15px 30px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase; margin-top: 20px; }
 
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-
-
-/* -----------------------------------------------------------
-   ESTILO DE ENCAJE (ÚNICO AGREGADO A LA SECCIÓN DE PADRES)
-   ----------------------------------------------------------- */
-.parents-section {
-    position: relative; /* Para poder posicionar el encaje */
-    padding: 140px 20px !important; /* Más espacio para que luzca el encaje */
-    overflow: hidden;
-}
-
-/* Encaje Superior */
-.parents-section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 80px;
-    background-image: url('https://www.transparenttextures.com/patterns/p-2.png');
-    background-repeat: repeat-x;
-    opacity: 0.5;
-    border-bottom: 1px solid rgba(197, 168, 128, 0.2);
-}
-
-/* Encaje Inferior */
-.parents-section::after {
-    content: "";
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%; height: 80px;
-    background-image: url('https://www.transparenttextures.com/patterns/p-2.png');
-    background-repeat: repeat-x;
-    transform: rotate(180deg);
-    opacity: 0.5;
-    border-bottom: 1px solid rgba(197, 168, 128, 0.2);
-}
