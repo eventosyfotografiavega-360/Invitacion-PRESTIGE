@@ -19,13 +19,12 @@ function openEnvelope() {
 // 2. INICIALIZAR CARRUSELES
 const swiperPadrinos = new Swiper('.swiper-padrinos', {
     loop: true,
-    pagination: { el: '.swiper-pagination', clickable: true },
-    autoplay: { delay: 4000 },
+    navigation: { nextEl: '.swiper-padrinos .swiper-button-next', prevEl: '.swiper-padrinos .swiper-button-prev' },
 });
 
 const swiperItinerario = new Swiper('.swiper-itinerario', {
     loop: true,
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    navigation: { nextEl: '.swiper-itinerario .swiper-button-next', prevEl: '.swiper-itinerario .swiper-button-prev' },
 });
 
 // 3. CUENTA REGRESIVA
