@@ -11,7 +11,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
-    <link rel="stylesheet" href="style.css?v=18.0">
+    <link rel="stylesheet" href="style.css?v=20.0">
 </head>
 <body>
 
@@ -32,42 +32,172 @@
 
     <main id="main-content" style="display:none; opacity:0;">
         
-        <section id="buenos-deseos" class="wishes-section">
-            <h2 class="script-blanca">Buenos Deseos</h2>
-            
-            <div class="wishes-buttons">
-                <button onclick="toggleWishes()" class="btn-wish-action">
-                    <i class="fa-regular fa-eye"></i> Ver Buenos Deseos
-                </button>
-                <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-wish-action">
-                    <i class="fa-regular fa-pen-to-square"></i> Enviar Buenos Deseos
-                </a>
+        <section id="inicio" class="hero">
+            <div class="hero-overlay">
+                <h1 class="caligrafia-blanca">Alicia & Mario</h1>
+                <p class="fecha-hero">22 . 08 . 2026</p>
             </div>
+        </section>
 
-            <div id="wishes-list" class="wishes-container" style="display: none;">
-                <button onclick="toggleWishes()" class="btn-close-wishes">
-                    <i class="fa-solid fa-xmark"></i> Cerrar Buenos Deseos
-                </button>
-
-                <div class="wish-card">
-                    <p class="wish-sender">Norma Alvarez ojeda</p>
-                    <p class="wish-text">Que dios los colme de bendiciones en compañía de toda su familia y q dios los guíe por buen camino son los mejores deseos de mi familia para este nuevo caminar juntos.</p>
+        <section class="countdown-section elegant-bg">
+            <div class="elegant-card">
+                <h2 class="script-oro">¡Nos casamos!</h2>
+                <p class="fecha-grande">Sábado 22 de Agosto 2026</p>
+                <div id="timer">
+                    <div class="t-block"><span id="days">00</span><p>Días</p></div>
+                    <div class="t-block"><span id="hours">00</span><p>Hrs</p></div>
+                    <div class="t-block"><span id="mins">00</span><p>Min</p></div>
+                    <div class="t-block"><span id="secs">00</span><p>Seg</p></div>
                 </div>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Alicia+y+Mario&dates=20260822T220000Z/20260823T040000Z" target="_blank" class="btn-calendar">AGREGAR A CALENDARIO</a>
+            </div>
+        </section>
 
-                <div class="wish-card">
-                    <p class="wish-sender">Marina Duarte</p>
-                    <p class="wish-text">Les deseo toda la felicidad del mundo, todo lo bonito de la vida, y que está nueva etapa de sus vidas venga llena de bendiciones.</p>
+        <section class="parents-section elegant-bg">
+            <h2 class="script-oro title-long">Con la bendición de Dios y de nuestros padres</h2>
+            <div class="parents-grid">
+                <div class="parent-box">
+                    <p class="padrino-nombre">Padres de la novia</p>
+                    <p>María Gutierrez</p>
+                    <p>Pedro Sánchez</p>
+                </div>
+                <div class="parent-box">
+                    <p class="padrino-nombre">Padres del novio</p>
+                    <p>Laura Rodríguez</p>
+                    <p>Ricardo Martínez</p>
                 </div>
             </div>
         </section>
 
-        <section class="gallery-header-section elegant-bg">
-            <h2 class="script-oro">Galeria de fotos</h2>
+        <section class="padrinos-section elegant-bg">
+            <h2 class="script-oro">Padrinos</h2>
+            <div class="swiper swiper-padrinos">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="itinerary-card">
+                            <div class="swiper-button-prev itin-arrow"></div>
+                            <div class="itin-content">
+                                <i class="fa-solid fa-heart itin-icon"></i>
+                                <h4>VELACIÓN</h4>
+                                <p class="padrino-nombre">Victor Alfonso Contreras Gómez</p>
+                                <p class="padrino-nombre">Brenda del Rocío González Lomelí</p>
+                            </div>
+                            <div class="swiper-button-next itin-arrow"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="itinerary-card">
+                            <div class="swiper-button-prev itin-arrow"></div>
+                            <div class="itin-content">
+                                <i class="fa-solid fa-ring itin-icon"></i>
+                                <h4>ANILLOS</h4>
+                                <p class="padrino-nombre">Nombre Padrino</p>
+                                <p class="padrino-nombre">Nombre Madrina</p>
+                            </div>
+                            <div class="swiper-button-next itin-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="itinerario" class="itinerario-section elegant-bg">
+            <h2 class="script-oro">Itinerario</h2>
+            <div class="swiper swiper-itinerario">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="itinerary-card">
+                            <div class="swiper-button-prev itin-arrow"></div>
+                            <div class="itin-content">
+                                <i class="fa-solid fa-church itin-icon"></i>
+                                <h4>IGLESIA</h4>
+                                <p class="itin-time">4:00 PM</p>
+                                <p class="itin-loc">Catedral de la Ciudad</p>
+                                <a href="#" target="_blank" class="btn-maps">¿Cómo llegar?</a>
+                            </div>
+                            <div class="swiper-button-next itin-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" class="historia-section elegant-bg">
+            <h2 class="script-oro">Nuestra Historia</h2>
+            <div class="swiper swiper-historia">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="historia-card">
+                            <div class="swiper-button-prev itin-arrow"></div>
+                            <div class="historia-content">
+                                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" class="historia-img">
+                                <p class="padrino-nombre">Primer Encuentro</p>
+                                <p class="historia-text">El inicio de nuestra historia.</p>
+                                <p class="padrino-nombre">Junio 2020</p>
+                            </div>
+                            <div class="swiper-button-next itin-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section id="regalos" class="regalos-section elegant-bg">
+            <p class="intro-text">¡Que nos acompañes es lo más importante!</p>
+            <h2 class="script-oro">Mesa de Regalos</h2>
+            <div class="regalos-container">
+                <div class="regalo-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_Liverpool.svg/1024px-Logo_Liverpool.svg.png" class="regalo-logo">
+                    <a href="#" target="_blank" class="btn-regalo"><i class="fa-solid fa-gift"></i> Ir a mesa de regalos</a>
+                </div>
+                <div class="regalo-card">
+                    <i class="fa-solid fa-envelope-open-text lluvia-icon"></i>
+                    <h4>Lluvia de Sobres</h4>
+                    <p class="lluvia-text">"Tradición de regalar dinero en efectivo el día del evento"</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vestimenta" class="vestimenta-section elegant-bg">
+            <h2 class="script-oro">Código de Vestimenta</h2>
+            <div class="vestimenta-container">
+                <div class="vestimenta-icons">
+                    <i class="fa-solid fa-user-tie vest-icon"></i>
+                    <i class="fa-solid fa-person-dress vest-icon"></i>
+                </div>
+                <p class="padrino-nombre">Formal</p>
+            </div>
+        </section>
+
+        <section id="consideraciones" class="consideraciones-section elegant-bg">
+            <h2 class="script-oro title-long">¡A Tomar en Cuenta!</h2>
+            <div class="list-container">
+                <ul class="reglas-lista">
+                    <li><span>1.-</span> Llegar 20 min antes del evento.</li>
+                    <li><span>2.-</span> Seguir el código de vestimenta.</li>
+                    <li><span>3.-</span> Confirmar asistencia.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="buenos-deseos" class="wishes-section">
+            <h2 class="script-blanca">Buenos Deseos</h2>
+            <div class="wishes-buttons">
+                <button onclick="toggleWishes()" class="btn-wish-action">Ver Buenos Deseos</button>
+                <a href="#" target="_blank" class="btn-wish-action">Enviar Buenos Deseos</a>
+            </div>
+            <div id="wishes-list" class="wishes-container" style="display: none;">
+                <div class="wish-card">
+                    <p class="wish-sender">Felicidades</p>
+                    <p class="wish-text">¡Muchas bendiciones en este nuevo camino!</p>
+                </div>
+            </div>
         </section>
 
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js?v=18.0"></script>
+    <script src="script.js?v=20.0"></script>
 </body>
 </html>
