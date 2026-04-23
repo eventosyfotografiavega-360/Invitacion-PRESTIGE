@@ -40,12 +40,21 @@ section { padding: 100px 20px; }
 .btn-calendar, .btn-maps { display: inline-block; padding: 15px 30px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase; margin-top: 20px; transition: 0.3s; }
 .btn-maps:hover { background: var(--oro); color: white; }
 
-/* Tarjetas (Padrinos e Itinerario) */
+/* Tarjetas */
 .itinerary-card { background: var(--white); padding: 70px 20px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); position: relative; margin: 0 10px; min-height: 420px; display: flex; flex-direction: column; justify-content: center; }
 .itin-icon { color: var(--oro); font-size: 3.5rem; margin-bottom: 25px; }
 .itin-content h4 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 3px; color: var(--texto); margin: 0 0 10px 0; font-weight: 400; }
 .itin-time { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--oro); margin: 10px 0; font-weight: 300; }
-.itin-loc { font-size: 1rem; color: #999; letter-spacing: 1px; }
 .itin-arrow { color: #dddddd; top: 50%; transform: translateY(-50%); width: 30px; }
+
+/* NUEVO: ESTILO UNIFICADO PARA NOMBRES DE PADRINOS */
+.padrino-nombre { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 1.8rem; /* Tamaño de Padrino 1 */
+    color: var(--oro); 
+    margin: 5px 0; 
+    font-weight: 300;
+    line-height: 1.2;
+}
 
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
