@@ -8,7 +8,43 @@
 
 body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--crema); text-align: center; color: var(--texto); overflow-x: hidden; }
 
-/* 1. Sobre e Iniciales */
+/* -----------------------------------------------------------
+   ESTILOS MAESTROS DE BOTONES PRESTIGE (CORREGIDO)
+   ----------------------------------------------------------- */
+.prestige-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none; /* Quita hipervínculo feo */
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid var(--oro); /* Rectángulo con bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    color: var(--oro); /* Letra del mismo tipo/color encabezados (simulado con oro Montserrat para UI) */
+    font-family: 'Montserrat', sans-serif; /* Montserrat para botones, Garamond es muy decorativo para UI */
+    font-size: 0.75rem; /* Pequeño para que quepan */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 10px 25px;
+    transition: 0.3s ease;
+}
+
+.prestige-btn i {
+    margin-right: 8px; /* Separación con icono */
+    font-size: 0.9rem;
+}
+
+.prestige-btn:hover {
+    background-color: rgba(197, 168, 128, 0.1);
+    border-color: #aa8c65;
+    color: #aa8c65;
+}
+
+/* -----------------------------------------------------------
+   Sobre y Hero
+   ----------------------------------------------------------- */
 #envelope-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--crema); z-index: 9999; display: flex; justify-content: center; align-items: center; perspective: 1000px; transition: transform 1s ease-in, opacity 1s; }
 .envelope { position: relative; width: 350px; height: 230px; background-color: var(--sobre-bg); cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 .flap { position: absolute; top: 0; left: 0; width: 0; height: 0; border-left: 175px solid transparent; border-right: 175px solid transparent; border-top: 115px solid #dcd0bc; transform-origin: top; transition: transform 0.6s ease; z-index: 3; }
@@ -18,10 +54,10 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(-
 .initials { font-family: 'Pinyon Script', cursive; font-size: 2.2rem; color: white; white-space: nowrap; line-height: 1; display: block; transform: translateY(5px); }
 .tooltip { background: var(--oro); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px; display: inline-block; animation: bounce 2s infinite; }
 .envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
-
-/* 2. Hero y Globales */
 .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; }
 .caligrafia-blanca { font-family: 'Pinyon Script', cursive; font-size: 5rem; margin: 0; }
+
+/* 2. Globales Secciones */
 section { padding: 100px 20px; }
 .elegant-bg { background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); }
 .script-oro { font-family: 'Pinyon Script', cursive; font-size: 4rem; color: var(--oro); margin: 0; }
@@ -38,17 +74,94 @@ section { padding: 100px 20px; }
 .itinerary-card, .historia-card { background: var(--white); padding: 60px 20px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); position: relative; margin: 0 10px; min-height: 420px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .itin-icon { color: var(--oro); font-size: 3.5rem; margin-bottom: 25px; }
 .itin-arrow { color: #dddddd; top: 50%; transform: translateY(-50%); width: 30px; }
+.historia-img { width: 100%; max-width: 350px; border-radius: 4px; margin-bottom: 25px; }
+.itin-loc { font-size: 0.9rem; color: #777; margin: 5px 0 20px; max-width: 250px; }
 
-/* 5. Regalos / Vestimenta / Deseos */
-.regalo-card, .vestimenta-container { background: var(--white); padding: 50px 30px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); max-width: 400px; margin: 20px auto; }
+/* 5. Regalos (Corregido Amazon Icono) */
+.regalo-card { background: var(--white); padding: 50px 30px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); max-width: 400px; margin: 20px auto; }
+.Amazon-Logo { max-width: 150px; margin-bottom: 20px; }
+.lluvia-icon { font-size: 4rem; color: var(--oro); margin-bottom: 20px; }
+.intro-text { font-size: 1.2rem; font-style: italic; color: var(--texto); margin-bottom: 5px; }
+.regalos-container { display: flex; flex-direction: column; gap: 20px; align-items: center; margin-top: 40px; }
+
+/* 6. CÓDIGO DE VESTIMENTA (ACTUALIZADO DISEÑO CON FOTOS) */
+.vestimenta-container { background: var(--white); padding: 60px 20px; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); max-width: 600px; margin: 40px auto 0; }
+.v-title { margin-top: 0; margin-bottom: 30px; }
+.dress-code-flex { display: flex; flex-direction: column; gap: 40px; margin-bottom: 40px; }
+.dress-code-box { border: 1px solid rgba(197, 168, 128, 0.2); padding: 20px; border-radius: 4px; display: flex; flex-direction: column; align-items: center; }
+.dress-icon-group { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.vest-icon { font-size: 3rem; color: var(--oro); }
+.v-label { font-size: 1rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
+.vest-example-img { width: 100%; max-width: 200px; height: auto; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 15px; }
+.v-suggestions { list-style: none; padding: 0; margin: 10px 0 0; text-align: center; color: #777; font-size: 0.9rem; }
+.v-suggestions li { margin-bottom: 5px; }
+
+.color-suggestions { border-top: 1px solid rgba(197, 168, 128, 0.2); padding-top: 30px; }
+.s-title { font-size: 1rem; color: var(--oro); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-weight: 500; }
+.color-list { list-style: none; padding: 0; margin: 0; text-align: center; color: #555; }
+.color-list li { display: inline-block; margin: 5px 10px; font-size: 0.9rem; font-style: italic; }
+.color-list li span { color: var(--oro); margin-right: 5px; }
+
+/* 7. A TOMAR EN CUENTA (DISEÑO MEJORADO CON ENCAJE) */
+.consideraciones-lace {
+    position: relative; /* Para poder posicionar el encaje */
+    padding: 140px 20px !important; /* Más espacio para que luzca el encaje */
+    overflow: hidden;
+}
+
+/* Encaje Superior */
+.consideraciones-lace::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 80px;
+    background-image: url('https://previews.123rf.com/images/svetlanaprikhnenko/svetlanaprikhnenko1507/svetlanaprikhnenko150700082/42709810-wedding-invitation-or-greeting-card-with-pearl-frame-on-lace-background.jpg'); /* REEMPLAZAR CON TU RUTA REAL */
+    background-repeat: repeat-x;
+    opacity: 0.4; /* Sutil */
+    border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+/* Encaje Inferior */
+.consideraciones-lace::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 80px;
+    background-image: url('https://previews.123rf.com/images/svetlanaprikhnenko/svetlanaprikhnenko1507/svetlanaprikhnenko150700082/42709810-wedding-invitation-or-greeting-card-with-pearl-frame-on-lace-background.jpg'); /* REEMPLAZAR CON TU RUTA REAL */
+    background-repeat: repeat-x;
+    transform: rotate(180deg); /* Voltear para que cierre */
+    opacity: 0.4;
+    border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+.consideraciones-section .title-long { margin-top: 20px; }
+
+.list-container {
+    max-width: 600px;
+    margin: 60px auto 0; /* Mayor separación */
+    background: var(--white);
+    padding: 60px 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    position: relative;
+    z-index: 2; /* Arriba del encaje */
+}
+
+.reglas-lista { list-style: none; padding: 0; margin: 0; text-align: left; }
+.reglas-lista li { display: flex; align-items: flex-start; margin-bottom: 40px; /* Mayor separación entre parrafos */ }
+.regla-num { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 500; color: var(--oro); margin-right: 20px; margin-top: 5px; min-width: 30px; text-align: right; }
+.reglas-lista p { margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; line-height: 1.6; color: var(--texto); }
+.reglas-lista li strong { color: #cc4e4e; font-weight: 500; } /* Resaltado para "no niños" */
+
+/* 8. Deseos */
 .wishes-section { background-color: var(--oro); color: white; padding: 100px 20px; }
 .script-blanca { font-family: 'Pinyon Script', cursive; font-size: 4rem; color: white; }
 .wish-card { border: 1px solid white; border-radius: 8px; padding: 25px; margin-top: 20px; max-width: 500px; }
 
-/* 6. ENCAJE SECCIÓN PADRES */
+/* Encaje Padres Original se mantiene para consistencia */
 .parents-section { position: relative; padding: 140px 20px !important; overflow: hidden; }
-.parents-section::before, .parents-section::after { content: ""; position: absolute; left: 0; width: 100%; height: 80px; background-image: url('https://www.transparenttextures.com/patterns/p-2.png'); background-repeat: repeat-x; opacity: 0.5; }
-.parents-section::before { top: 0; border-bottom: 1px solid rgba(197, 168, 128, 0.2); }
-.parents-section::after { bottom: 0; transform: rotate(180deg); border-bottom: 1px solid rgba(197, 168, 128, 0.2); }
+.parents-section::before, .parents-section::after { content: ""; position: absolute; left: 0; width: 100%; height: 80px; background-image: url('https://www.transparenttextures.com/patterns/p-2.png'); background-repeat: repeat-x; opacity: 0.5; border-bottom: 1px solid rgba(197, 168, 128, 0.2); }
+.parents-section::before { top: 0; }
+.parents-section::after { bottom: 0; transform: rotate(180deg); }
 
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
