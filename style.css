@@ -8,59 +8,80 @@
 
 body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--crema); text-align: center; color: var(--texto); overflow-x: hidden; }
 
-/* Botones Prestige Redondeados */
+/* -----------------------------------------------------------
+   ESTILO DE BOTONES PRESTIGE (UNIFICADO)
+   ----------------------------------------------------------- */
 .prestige-btn {
     display: inline-block;
     background: transparent;
     border: 1.5px solid var(--oro);
-    border-radius: 25px; /* Bordes redondeados */
-    padding: 10px 25px;
+    border-radius: 4px; /* Rectángulo con bordes redondeados sutiles */
+    padding: 12px 25px;
     color: var(--oro);
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
+    font-family: 'Cormorant Garamond', serif; /* Misma que padrinos */
+    font-size: 0.9rem; /* Pequeño para que quepan */
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-weight: 500;
     transition: 0.3s;
     cursor: pointer;
     margin-top: 15px;
 }
+
 .prestige-btn:hover { background: var(--oro); color: white; }
 .btn-white { border-color: white; color: white; }
 .btn-white:hover { background: white; color: var(--oro); }
 
-/* Sobre e Iniciales */
+/* 1. Sobre e Iniciales */
 #envelope-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--crema); z-index: 9999; display: flex; justify-content: center; align-items: center; perspective: 1000px; transition: transform 1s ease-in, opacity 1s; }
-.envelope { position: relative; width: 350px; height: 230px; background-color: var(--sobre-bg); cursor: pointer; }
+.envelope { position: relative; width: 350px; height: 230px; background-color: var(--sobre-bg); cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 .flap { position: absolute; top: 0; left: 0; width: 0; height: 0; border-left: 175px solid transparent; border-right: 175px solid transparent; border-top: 115px solid #dcd0bc; transform-origin: top; transition: transform 0.6s ease; z-index: 3; }
 .body { position: absolute; bottom: 0; width: 0; height: 0; border-left: 175px solid #e6dbca; border-right: 175px solid #e6dbca; border-bottom: 115px solid #f0e6d6; z-index: 2; }
 .seal-container { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -15%); z-index: 4; text-align: center; }
 .wax-seal { width: 110px; height: 110px; background: radial-gradient(circle, #e6bc5c 0%, #b38b2d 100%); border-radius: 50%; border: 2px solid #99741d; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2); padding: 10px; box-sizing: border-box; }
 .initials { font-family: 'Pinyon Script', cursive; font-size: 2.2rem; color: white; white-space: nowrap; line-height: 1; display: block; transform: translateY(5px); }
+.tooltip { background: var(--oro); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 10px; display: inline-block; animation: bounce 2s infinite; }
 .envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
 
-/* Global Secciones */
+/* 2. Hero y Globales */
+.hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; }
+.caligrafia-blanca { font-family: 'Pinyon Script', cursive; font-size: 5rem; margin: 0; }
 section { padding: 100px 20px; }
 .elegant-bg { background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); }
 .script-oro { font-family: 'Pinyon Script', cursive; font-size: 4rem; color: var(--oro); margin: 0; }
 .padrino-nombre { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--oro); margin: 10px 0; font-weight: 300; line-height: 1.2; }
 
-/* Cards y Swipers */
+/* 3. Contador Regresivo (CUADRITOS INDEPENDIENTES RESTAURADO) */
+.elegant-card { background: var(--white); padding: 60px 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+#timer { display: flex; justify-content: center; gap: 10px; margin: 40px 0; }
+.t-block { background: var(--white); padding: 15px 10px; min-width: 75px; border-radius: 2px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+.t-block span { font-size: 1.8rem; display: block; color: var(--oro); }
+
+/* 4. Tarjetas Itinerario, Historia y Padrinos */
 .itinerary-card, .historia-card, .vestimenta-container, .list-container { background: var(--white); padding: 60px 20px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); position: relative; margin: 0 10px; min-height: 380px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .itin-icon, .gift-prestige-icon { color: var(--oro); font-size: 3rem; margin-bottom: 25px; }
 .itin-arrow { color: #dddddd; top: 50%; transform: translateY(-50%); width: 30px; }
-.historia-img { width: 100%; max-width: 250px; border-radius: 4px; cursor: pointer; }
+.historia-img { width: 100%; max-width: 250px; border-radius: 4px; cursor: pointer; transition: transform 0.3s; }
+.historia-img:hover { transform: scale(1.02); }
 
-/* Encaje */
+/* 5. Mesa de Regalos Corregida */
+.Amazon-Logo { max-width: 150px; margin-bottom: 20px; }
+.lluvia-icon { font-size: 4rem; color: var(--oro); margin-bottom: 20px; }
+
+/* 6. Vestimenta y Fotos Reales */
+.dress-code-row { display: flex; gap: 20px; margin-top: 30px; justify-content: center; }
+.dress-img { width: 110px; height: 160px; object-fit: cover; border-radius: 4px; }
+
+/* 7. Encaje Secciones */
 .parents-section { position: relative; padding: 140px 20px !important; overflow: hidden; }
 .parents-section::before, .parents-section::after { content: ""; position: absolute; left: 0; width: 100%; height: 80px; background-image: url('https://www.transparenttextures.com/patterns/p-2.png'); background-repeat: repeat-x; opacity: 0.5; border-bottom: 1px solid rgba(197, 168, 128, 0.2); }
 .parents-section::after { bottom: 0; transform: rotate(180deg); }
 
-.lace-bg { background-image: url('https://previews.123rf.com/images/svetlanaprikhnenko/svetlanaprikhnenko1507/svetlanaprikhnenko150700082/42709810-wedding-invitation-or-greeting-card-with-pearl-frame-on-lace-background.jpg'); background-size: cover; position: relative; }
-.lace-bg::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(253, 250, 246, 0.85); z-index: 1; }
-.lace-bg h2, .lace-bg .list-container { position: relative; z-index: 2; }
+.consideraciones-lace { background-image: url('image_32239f.jpg') !important; background-size: cover; position: relative; }
+.consideraciones-lace .list-container { background: rgba(255, 255, 255, 0.9); }
 
-/* Vestimenta */
-.dress-code-row { display: flex; gap: 20px; margin-top: 30px; justify-content: center; }
-.dress-img { width: 110px; height: 160px; object-fit: cover; border-radius: 4px; }
+/* 8. Deseos */
+.wishes-section { background-color: var(--oro); color: white; padding: 100px 20px; }
+.script-blanca { font-family: 'Pinyon Script', cursive; font-size: 4rem; color: white; }
+
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
